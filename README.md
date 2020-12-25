@@ -17,3 +17,4 @@ in there are all the NavMeshObstacle. Done.
 
 ![tut3](https://user-images.githubusercontent.com/76574483/103113717-44321300-465c-11eb-9b16-279192ba2392.png)
 
+Link to Script : https://github.com/Malikir324/Unity-NavMesh-adding-Obstacles-To-Terrain-Trees/blob/main/SetTerrainObstacles.cs

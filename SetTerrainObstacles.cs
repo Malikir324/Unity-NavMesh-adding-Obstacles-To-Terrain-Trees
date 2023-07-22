@@ -79,6 +79,7 @@ public class SetTerrainObstacles : MonoBehaviour
 
             i++;
         }
+        parent.transform.position = terrain.GetPosition();
         if(!isError) Debug.Log("All " + Obstacle.Length + " NavMeshObstacles were succesfully added to your Scene, Horray !");
     }
 }

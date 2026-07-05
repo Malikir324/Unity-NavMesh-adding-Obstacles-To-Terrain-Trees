@@ -31,10 +31,18 @@ public class SetTerrainObstacles : MonoBehaviour
             Vector3 tempPos = new Vector3(tree.position.x * width, tree.position.y * hight, tree.position.z * lenght);
             Quaternion tempRot = Quaternion.AngleAxis(tree.rotation * Mathf.Rad2Deg, Vector3.up);
 
+            GameObject treePrefab = terrain.terrainData.treePrototypes[tree.prototypeIndex].prefab;
+
+            float scaleHeight = tree.heightScale;
+            float scaleWidth = tree.widthScale;
+            Vector3 tempScale = treePrefab.transform.localScale;
+            tempScale = new Vector3(tempScale.x * scaleWidth, tempScale.y * scaleHeight, tempScale.z * scaleWidth);
+
             GameObject obs = new GameObject("Obstacle" + i);
             obs.transform.SetParent(parent.transform);
             obs.transform.position = tempPos;
             obs.transform.rotation = tempRot;
+            obs.transform.localScale = tempScale;
 
             obs.AddComponent<NavMeshObstacle>();
             NavMeshObstacle obsElement = obs.GetComponent<NavMeshObstacle>();
